@@ -5,6 +5,9 @@
  */
 package Vista;
 
+import static java.lang.System.exit;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author daw-B
@@ -39,14 +42,14 @@ public class Formulario extends javax.swing.JFrame {
         jTextField_Apellido_1 = new javax.swing.JTextField();
         jTextField_Apellido_2 = new javax.swing.JTextField();
         jComboBox_Estado_Civil = new javax.swing.JComboBox<>();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jSpinner1 = new javax.swing.JSpinner();
+        jRadioButtonHombre = new javax.swing.JRadioButton();
+        jRadioButtonMujer = new javax.swing.JRadioButton();
+        jSpinner_Edad = new javax.swing.JSpinner();
         jPanel_Mostrar_Datos = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jTextArea_Mostrar_Datos = new javax.swing.JTextArea();
+        jButton_Salir = new javax.swing.JButton();
+        jButtonGuardar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -87,11 +90,11 @@ public class Formulario extends javax.swing.JFrame {
 
         jComboBox_Estado_Civil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Soltero", "Casado", "Divorciado", "Viudo" }));
 
-        buttonGroup_Sexo.add(jRadioButton1);
-        jRadioButton1.setText("Hombre");
+        buttonGroup_Sexo.add(jRadioButtonHombre);
+        jRadioButtonHombre.setText("Hombre");
 
-        buttonGroup_Sexo.add(jRadioButton2);
-        jRadioButton2.setText("Mujer");
+        buttonGroup_Sexo.add(jRadioButtonMujer);
+        jRadioButtonMujer.setText("Mujer");
 
         javax.swing.GroupLayout jPanel_Datos_PersonalesLayout = new javax.swing.GroupLayout(jPanel_Datos_Personales);
         jPanel_Datos_Personales.setLayout(jPanel_Datos_PersonalesLayout);
@@ -116,10 +119,10 @@ public class Formulario extends javax.swing.JFrame {
                         .addComponent(jTextField_Apellido_2)
                         .addComponent(jComboBox_Estado_Civil, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel_Datos_PersonalesLayout.createSequentialGroup()
-                        .addComponent(jRadioButton1)
+                        .addComponent(jRadioButtonHombre)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jRadioButton2))
-                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jRadioButtonMujer))
+                    .addComponent(jSpinner_Edad, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(62, Short.MAX_VALUE))
         );
         jPanel_Datos_PersonalesLayout.setVerticalGroup(
@@ -144,18 +147,18 @@ public class Formulario extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel_Datos_PersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel_Sexo, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2))
+                    .addComponent(jRadioButtonHombre)
+                    .addComponent(jRadioButtonMujer))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel_Datos_PersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel_Edad, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jSpinner_Edad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        jTextArea_Mostrar_Datos.setColumns(20);
+        jTextArea_Mostrar_Datos.setRows(5);
+        jScrollPane1.setViewportView(jTextArea_Mostrar_Datos);
 
         javax.swing.GroupLayout jPanel_Mostrar_DatosLayout = new javax.swing.GroupLayout(jPanel_Mostrar_Datos);
         jPanel_Mostrar_Datos.setLayout(jPanel_Mostrar_DatosLayout);
@@ -174,9 +177,19 @@ public class Formulario extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jButton1.setText("Salir");
+        jButton_Salir.setText("Salir");
+        jButton_Salir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton_SalirMouseClicked(evt);
+            }
+        });
 
-        jButton2.setText("Guardar");
+        jButtonGuardar.setText("Guardar");
+        jButtonGuardar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonGuardarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -189,9 +202,9 @@ public class Formulario extends javax.swing.JFrame {
                     .addComponent(jPanel_Datos_Personales, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton2)
+                        .addComponent(jButtonGuardar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButton_Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -201,8 +214,8 @@ public class Formulario extends javax.swing.JFrame {
                 .addComponent(jPanel_Datos_Personales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(jButton_Salir)
+                    .addComponent(jButtonGuardar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel_Mostrar_Datos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -222,6 +235,37 @@ public class Formulario extends javax.swing.JFrame {
     private void jTextField_Apellido_2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField_Apellido_2MouseClicked
         jTextField_Apellido_2.setText("");
     }//GEN-LAST:event_jTextField_Apellido_2MouseClicked
+
+    private void jButtonGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonGuardarMouseClicked
+        String nombre = jTextField_Nombre.getText();
+        String apellido_1 = jTextField_Apellido_1.getText();
+        String apellido_2 = jTextField_Apellido_2.getText();
+        String estado_civil = (String) jComboBox_Estado_Civil.getSelectedItem();
+        String sexo;
+        int edad = (int) jSpinner_Edad.getValue();
+        if (jRadioButtonHombre.isSelected()) {
+            sexo = "Hombre";
+        } else{
+            sexo = "Mujer";
+        }
+        if ((!jRadioButtonHombre.isSelected() && !jRadioButtonMujer.isSelected()) || jTextField_Nombre.getText().equalsIgnoreCase("Nombre")|| jTextField_Apellido_1.getText().equalsIgnoreCase("Apellido")|| jTextField_Apellido_2.getText().equalsIgnoreCase("Apellido") || ((int)jSpinner_Edad.getValue() <= 0)) {
+            JOptionPane.showMessageDialog(rootPane, "Por favor ingrese los datos correctamente");
+        } else{
+            jTextArea_Mostrar_Datos.setText(jTextArea_Mostrar_Datos.getText() + nombre + ", " + apellido_1 + ", " + apellido_2 + ", " + estado_civil + ", " + sexo + ", " + edad + "\n");
+        }
+        jTextField_Nombre.setText("Nombre");
+        jTextField_Apellido_1.setText("Apellido");
+        jTextField_Apellido_2.setText("Apellido");
+        jSpinner_Edad.setValue(0);
+    }//GEN-LAST:event_jButtonGuardarMouseClicked
+
+    private void jButton_SalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_SalirMouseClicked
+        int opc = JOptionPane.showConfirmDialog(rootPane, "¿Estas seguro que quieres salir?");
+        
+        if (opc == JOptionPane.YES_OPTION) {
+            exit(0);   
+        }
+    }//GEN-LAST:event_jButton_SalirMouseClicked
 
     /**
      * @param args the command line arguments
@@ -260,8 +304,8 @@ public class Formulario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup_Sexo;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButtonGuardar;
+    private javax.swing.JButton jButton_Salir;
     private javax.swing.JComboBox<String> jComboBox_Estado_Civil;
     private javax.swing.JLabel jLabel_1_Apellido;
     private javax.swing.JLabel jLabel_2_Apellido;
@@ -271,11 +315,11 @@ public class Formulario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel_Sexo;
     private javax.swing.JPanel jPanel_Datos_Personales;
     private javax.swing.JPanel jPanel_Mostrar_Datos;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButtonHombre;
+    private javax.swing.JRadioButton jRadioButtonMujer;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSpinner jSpinner1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JSpinner jSpinner_Edad;
+    private javax.swing.JTextArea jTextArea_Mostrar_Datos;
     private javax.swing.JTextField jTextField_Apellido_1;
     private javax.swing.JTextField jTextField_Apellido_2;
     private javax.swing.JTextField jTextField_Nombre;
