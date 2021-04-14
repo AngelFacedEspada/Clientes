@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import Controlador.IODatos;
 import Modelo.Cliente;
 import static java.lang.System.exit;
 import java.util.ArrayList;
@@ -242,6 +243,7 @@ public class Formulario extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField_Apellido_2MouseClicked
 
     private void jButtonGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonGuardarMouseClicked
+        vClientes = new ArrayList<>();
         nombre = jTextField_Nombre.getText();
         apellido_1 = jTextField_Apellido_1.getText();
         apellido_2 = jTextField_Apellido_2.getText();
@@ -258,6 +260,7 @@ public class Formulario extends javax.swing.JFrame {
             jTextArea_Mostrar_Datos.setText(jTextArea_Mostrar_Datos.getText() + nombre + ", " + apellido_1 + ", " + apellido_2 + ", " + estado_civil + ", " + sexo + ", " + edad + "\n");
             Cliente cliente = new Cliente(nombre, apellido_1, apellido_2, estado_civil, sexo, edad);
             vClientes.add(cliente);
+            IODatos.escribirClientes(vClientes);
         }
         jTextField_Nombre.setText("Nombre");
         jTextField_Apellido_1.setText("Apellido");
