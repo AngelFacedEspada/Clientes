@@ -6,6 +6,7 @@
 package Vista;
 
 import static java.lang.System.exit;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,6 +20,7 @@ public class Formulario extends javax.swing.JFrame {
      */
     public Formulario() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Imagenes/fondo.jpg")).getImage());
     }
 
     /**
@@ -266,7 +268,7 @@ public class Formulario extends javax.swing.JFrame {
             exit(0);   
         }
     }//GEN-LAST:event_jButton_SalirMouseClicked
-
+    
     /**
      * @param args the command line arguments
      */
