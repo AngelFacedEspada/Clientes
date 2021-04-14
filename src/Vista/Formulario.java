@@ -5,6 +5,9 @@
  */
 package Vista;
 
+import static java.lang.System.exit;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author daw-B
@@ -27,21 +30,242 @@ public class Formulario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup_Sexo = new javax.swing.ButtonGroup();
+        jPanel_Datos_Personales = new javax.swing.JPanel();
+        jLabel_Nombre = new javax.swing.JLabel();
+        jLabel_1_Apellido = new javax.swing.JLabel();
+        jLabel_2_Apellido = new javax.swing.JLabel();
+        jLabel_Estado_Civil = new javax.swing.JLabel();
+        jLabel_Sexo = new javax.swing.JLabel();
+        jLabel_Edad = new javax.swing.JLabel();
+        jTextField_Nombre = new javax.swing.JTextField();
+        jTextField_Apellido_1 = new javax.swing.JTextField();
+        jTextField_Apellido_2 = new javax.swing.JTextField();
+        jComboBox_Estado_Civil = new javax.swing.JComboBox<>();
+        jRadioButtonHombre = new javax.swing.JRadioButton();
+        jRadioButtonMujer = new javax.swing.JRadioButton();
+        jSpinner_Edad = new javax.swing.JSpinner();
+        jPanel_Mostrar_Datos = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea_Mostrar_Datos = new javax.swing.JTextArea();
+        jButton_Salir = new javax.swing.JButton();
+        jButtonGuardar = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel_Datos_Personales.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos Personales", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 14), new java.awt.Color(0, 0, 0))); // NOI18N
+
+        jLabel_Nombre.setText("Nombre :");
+
+        jLabel_1_Apellido.setText("Primer apellido :");
+
+        jLabel_2_Apellido.setText("Segundo apellido :");
+
+        jLabel_Estado_Civil.setText("Estado civil :");
+
+        jLabel_Sexo.setText("Sexo :");
+
+        jLabel_Edad.setText("Edad :");
+
+        jTextField_Nombre.setText("Nombre");
+        jTextField_Nombre.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField_NombreMouseClicked(evt);
+            }
+        });
+
+        jTextField_Apellido_1.setText("Apellido");
+        jTextField_Apellido_1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField_Apellido_1MouseClicked(evt);
+            }
+        });
+
+        jTextField_Apellido_2.setText("Apellido");
+        jTextField_Apellido_2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField_Apellido_2MouseClicked(evt);
+            }
+        });
+
+        jComboBox_Estado_Civil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Soltero", "Casado", "Divorciado", "Viudo" }));
+
+        buttonGroup_Sexo.add(jRadioButtonHombre);
+        jRadioButtonHombre.setText("Hombre");
+
+        buttonGroup_Sexo.add(jRadioButtonMujer);
+        jRadioButtonMujer.setText("Mujer");
+
+        javax.swing.GroupLayout jPanel_Datos_PersonalesLayout = new javax.swing.GroupLayout(jPanel_Datos_Personales);
+        jPanel_Datos_Personales.setLayout(jPanel_Datos_PersonalesLayout);
+        jPanel_Datos_PersonalesLayout.setHorizontalGroup(
+            jPanel_Datos_PersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_Datos_PersonalesLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addGroup(jPanel_Datos_PersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel_Datos_PersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel_2_Apellido, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel_1_Apellido, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel_Estado_Civil, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_Datos_PersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel_Edad, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel_Sexo, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel_Datos_PersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel_Datos_PersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jTextField_Nombre)
+                        .addComponent(jTextField_Apellido_1)
+                        .addComponent(jTextField_Apellido_2)
+                        .addComponent(jComboBox_Estado_Civil, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel_Datos_PersonalesLayout.createSequentialGroup()
+                        .addComponent(jRadioButtonHombre)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jRadioButtonMujer))
+                    .addComponent(jSpinner_Edad, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(62, Short.MAX_VALUE))
+        );
+        jPanel_Datos_PersonalesLayout.setVerticalGroup(
+            jPanel_Datos_PersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_Datos_PersonalesLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addGroup(jPanel_Datos_PersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel_Datos_PersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel_1_Apellido, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField_Apellido_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel_Datos_PersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel_2_Apellido, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField_Apellido_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel_Datos_PersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel_Estado_Civil, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox_Estado_Civil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel_Datos_PersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel_Sexo, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jRadioButtonHombre)
+                    .addComponent(jRadioButtonMujer))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel_Datos_PersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel_Edad, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSpinner_Edad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(29, Short.MAX_VALUE))
+        );
+
+        jTextArea_Mostrar_Datos.setColumns(20);
+        jTextArea_Mostrar_Datos.setRows(5);
+        jScrollPane1.setViewportView(jTextArea_Mostrar_Datos);
+
+        javax.swing.GroupLayout jPanel_Mostrar_DatosLayout = new javax.swing.GroupLayout(jPanel_Mostrar_Datos);
+        jPanel_Mostrar_Datos.setLayout(jPanel_Mostrar_DatosLayout);
+        jPanel_Mostrar_DatosLayout.setHorizontalGroup(
+            jPanel_Mostrar_DatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_Mostrar_DatosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1)
+                .addContainerGap())
+        );
+        jPanel_Mostrar_DatosLayout.setVerticalGroup(
+            jPanel_Mostrar_DatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_Mostrar_DatosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jButton_Salir.setText("Salir");
+        jButton_Salir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton_SalirMouseClicked(evt);
+            }
+        });
+
+        jButtonGuardar.setText("Guardar");
+        jButtonGuardar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonGuardarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel_Mostrar_Datos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel_Datos_Personales, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButtonGuardar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton_Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel_Datos_Personales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton_Salir)
+                    .addComponent(jButtonGuardar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel_Mostrar_Datos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextField_NombreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField_NombreMouseClicked
+        jTextField_Nombre.setText("");
+    }//GEN-LAST:event_jTextField_NombreMouseClicked
+
+    private void jTextField_Apellido_1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField_Apellido_1MouseClicked
+        jTextField_Apellido_1.setText("");
+    }//GEN-LAST:event_jTextField_Apellido_1MouseClicked
+
+    private void jTextField_Apellido_2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField_Apellido_2MouseClicked
+        jTextField_Apellido_2.setText("");
+    }//GEN-LAST:event_jTextField_Apellido_2MouseClicked
+
+    private void jButtonGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonGuardarMouseClicked
+        String nombre = jTextField_Nombre.getText();
+        String apellido_1 = jTextField_Apellido_1.getText();
+        String apellido_2 = jTextField_Apellido_2.getText();
+        String estado_civil = (String) jComboBox_Estado_Civil.getSelectedItem();
+        String sexo;
+        int edad = (int) jSpinner_Edad.getValue();
+        if (jRadioButtonHombre.isSelected()) {
+            sexo = "Hombre";
+        } else{
+            sexo = "Mujer";
+        }
+        if ((!jRadioButtonHombre.isSelected() && !jRadioButtonMujer.isSelected()) || jTextField_Nombre.getText().equalsIgnoreCase("Nombre")|| jTextField_Apellido_1.getText().equalsIgnoreCase("Apellido")|| jTextField_Apellido_2.getText().equalsIgnoreCase("Apellido") || ((int)jSpinner_Edad.getValue() <= 0)) {
+            JOptionPane.showMessageDialog(rootPane, "Por favor ingrese los datos correctamente");
+        } else{
+            jTextArea_Mostrar_Datos.setText(jTextArea_Mostrar_Datos.getText() + nombre + ", " + apellido_1 + ", " + apellido_2 + ", " + estado_civil + ", " + sexo + ", " + edad + "\n");
+        }
+        jTextField_Nombre.setText("Nombre");
+        jTextField_Apellido_1.setText("Apellido");
+        jTextField_Apellido_2.setText("Apellido");
+        jSpinner_Edad.setValue(0);
+    }//GEN-LAST:event_jButtonGuardarMouseClicked
+
+    private void jButton_SalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_SalirMouseClicked
+        int opc = JOptionPane.showConfirmDialog(rootPane, "¿Estas seguro que quieres salir?");
+        
+        if (opc == JOptionPane.YES_OPTION) {
+            exit(0);   
+        }
+    }//GEN-LAST:event_jButton_SalirMouseClicked
 
     /**
      * @param args the command line arguments
@@ -79,5 +303,25 @@ public class Formulario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup_Sexo;
+    private javax.swing.JButton jButtonGuardar;
+    private javax.swing.JButton jButton_Salir;
+    private javax.swing.JComboBox<String> jComboBox_Estado_Civil;
+    private javax.swing.JLabel jLabel_1_Apellido;
+    private javax.swing.JLabel jLabel_2_Apellido;
+    private javax.swing.JLabel jLabel_Edad;
+    private javax.swing.JLabel jLabel_Estado_Civil;
+    private javax.swing.JLabel jLabel_Nombre;
+    private javax.swing.JLabel jLabel_Sexo;
+    private javax.swing.JPanel jPanel_Datos_Personales;
+    private javax.swing.JPanel jPanel_Mostrar_Datos;
+    private javax.swing.JRadioButton jRadioButtonHombre;
+    private javax.swing.JRadioButton jRadioButtonMujer;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSpinner jSpinner_Edad;
+    private javax.swing.JTextArea jTextArea_Mostrar_Datos;
+    private javax.swing.JTextField jTextField_Apellido_1;
+    private javax.swing.JTextField jTextField_Apellido_2;
+    private javax.swing.JTextField jTextField_Nombre;
     // End of variables declaration//GEN-END:variables
 }
