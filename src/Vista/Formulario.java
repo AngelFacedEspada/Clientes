@@ -11,6 +11,7 @@ import static java.lang.System.exit;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
 
 
 /**
@@ -25,6 +26,9 @@ public class Formulario extends javax.swing.JFrame {
     public Formulario() {
         initComponents();
         setIconImage(new ImageIcon(getClass().getResource("/Imagenes/fondo.jpg")).getImage());
+        vClientes = IODatos.cargarClientes();
+ 
+        escribir_texto();
     }
 
     /**
@@ -243,7 +247,6 @@ public class Formulario extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField_Apellido_2MouseClicked
 
     private void jButtonGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonGuardarMouseClicked
-        vClientes = new ArrayList<>();
         nombre = jTextField_Nombre.getText();
         apellido_1 = jTextField_Apellido_1.getText();
         apellido_2 = jTextField_Apellido_2.getText();
@@ -257,10 +260,10 @@ public class Formulario extends javax.swing.JFrame {
         if ((!jRadioButtonHombre.isSelected() && !jRadioButtonMujer.isSelected()) || jTextField_Nombre.getText().equalsIgnoreCase("Nombre")|| jTextField_Apellido_1.getText().equalsIgnoreCase("Apellido")|| jTextField_Apellido_2.getText().equalsIgnoreCase("Apellido") || ((int)jSpinner_Edad.getValue() <= 0)) {
             JOptionPane.showMessageDialog(rootPane, "Por favor ingrese los datos correctamente");
         } else{
-            jTextArea_Mostrar_Datos.setText(jTextArea_Mostrar_Datos.getText() + nombre + ", " + apellido_1 + ", " + apellido_2 + ", " + estado_civil + ", " + sexo + ", " + edad + "\n");
             Cliente cliente = new Cliente(nombre, apellido_1, apellido_2, estado_civil, sexo, edad);
             vClientes.add(cliente);
             IODatos.escribirClientes(vClientes);
+            escribir_texto();
         }
         jTextField_Nombre.setText("Nombre");
         jTextField_Apellido_1.setText("Apellido");
@@ -276,6 +279,14 @@ public class Formulario extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton_SalirMouseClicked
     
+      public void escribir_texto(){
+        jTextArea_Mostrar_Datos.setText("");
+        String texto = "";
+        for (Cliente c : vClientes) {
+            texto += c.toString();
+        }
+        jTextArea_Mostrar_Datos.setText(texto);
+    }
     /**
      * @param args the command line arguments
      */
@@ -310,7 +321,7 @@ public class Formulario extends javax.swing.JFrame {
             }
         });
     }
-    
+  
     ArrayList<Cliente> vClientes;
     String nombre;
     String apellido_1;
